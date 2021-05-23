@@ -1,5 +1,9 @@
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
+import Header from 'components/Header';
+import EditorDeCodigo from 'pages/EditorDeCodigo';
+import Comunidade from 'pages/Comunidade';
 
 import main from './styles/themes/main';
 
@@ -8,7 +12,13 @@ function App() {
     <ThemeProvider theme={main}>
       <GlobalStyles />
       <div className="App">
-        <h1>Alura Challenge</h1>
+        <Router>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={EditorDeCodigo} />
+            <Route path="/comunidade" component={Comunidade} />
+          </Switch>
+        </Router>
       </div>
     </ThemeProvider>
   );
