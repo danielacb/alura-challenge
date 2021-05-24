@@ -10,6 +10,7 @@ export const Input = styled.input(
     line-height: 1.5rem;
     padding: 1rem 0.875rem;
     transition: 0.4s;
+    width: 100%;
 
     outline: 2px;
     outline-color: transparent;
