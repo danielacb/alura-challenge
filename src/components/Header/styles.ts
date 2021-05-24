@@ -41,12 +41,16 @@ export const Search = styled.div(
 
     &.open {
       opacity: 1;
-      top: 1.7rem;
+      pointer-events: auto;
+      top: 0;
     }
 
     @media (max-width: 697px) {
       background-color: ${theme.colors.darkBlue};
+      left: 0;
       opacity: 0;
+      padding: 0.7rem 1rem;
+      pointer-events: none;
       position: absolute;
       top: -1rem;
       visibility: none;
@@ -74,6 +78,7 @@ export const SearchToggle = styled.button(
     width: 3rem;
 
     svg {
+      cursor: pointer;
       fill: ${theme.colors.white};
     }
 
@@ -171,11 +176,13 @@ export const Drawer = styled.nav(
     top: 5rem;
 
     opacity: 0;
+    pointer-events: none;
     transition: 0.3s;
     visibility: none;
 
     &.open {
       opacity: 1;
+      pointer-events: auto;
       top: 7rem;
       visibility: visible;
     }
