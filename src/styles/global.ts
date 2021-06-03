@@ -31,6 +31,14 @@ button {
   cursor: pointer;
 }
 
+h2 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+}
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;
