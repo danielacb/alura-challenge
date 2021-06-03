@@ -1,9 +1,16 @@
+import Menu from 'components/Menu';
 import * as S from './styles';
 
 const Comunidade: React.FC = () => {
   return (
     <S.Container>
-      <h1>Comunidade</h1>
+      <S.Column>
+        <Menu />
+      </S.Column>
+      <S.Content>
+        <h1>Comunidade</h1>
+      </S.Content>
+      <S.Column></S.Column>
     </S.Container>
   );
 };

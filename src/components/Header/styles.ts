@@ -1,16 +1,11 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
-  padding: 2rem;
-
   flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media (max-width: 697px) {
-    padding: 1rem;
-  }
+  margin-bottom: 2.5rem;
 `;
 
 export const Search = styled.div(
@@ -106,7 +101,7 @@ export const Column = styled.div`
   align-items: center;
   display: flex;
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1200px) {
     width: 33.333%;
   }
 
@@ -114,7 +109,7 @@ export const Column = styled.div`
     justify-content: flex-end;
 
     & > div {
-      @media (max-width: 1024px) {
+      @media (max-width: 1199px) {
         display: none;
       }
     }
@@ -155,7 +150,7 @@ export const MenuToggle = styled.button(
       background-color: ${theme.colors.blue300 + '16'};
     }
 
-    @media (min-width: 1025px) {
+    @media (min-width: 1200px) {
       display: none;
     }
   `
@@ -165,7 +160,7 @@ export const Drawer = styled.nav(
   ({ theme }) => css`
     background-color: ${theme.colors.darkBlue};
     border-radius: 0.5rem;
-    height: calc(100vh - 10.75rem);
+    height: calc(100vh - 14rem);
     overflow: hidden;
     padding: 1.5rem;
     width: 16rem;

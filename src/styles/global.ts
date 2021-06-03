@@ -19,6 +19,14 @@ button {
   font-family: 'Inter', sans-serif;
 }
 
+body {
+  padding: 2rem;
+
+  @media (max-width: 697px) {
+    padding: 1rem;
+  }
+}
+
 button {
   cursor: pointer;
 }
