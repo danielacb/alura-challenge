@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
 type StylesProps = {
-  bgcolor?: string;
+  color?: string;
 };
 
 export const Container = styled.div<StylesProps>(
-  ({ theme, bgcolor }) => css`
-    background-color: ${bgcolor ? bgcolor : theme.colors.defaultCodeBgColor};
+  ({ theme, color }) => css`
+    background-color: ${color ? color : theme.colors.defaultCodeBgColor};
     border-radius: 0.5rem;
     padding: 2rem;
     position: relative;

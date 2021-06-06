@@ -4,7 +4,7 @@ export const Container = styled.div`
   form {
     h2,
     input,
-    select {
+    & > div {
       margin-bottom: 1rem;
     }
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
       h2,
       input,
       textarea,
-      select {
+      & > div {
         margin-left: 2.5rem;
         width: calc(100% - 2.5rem);
       }
