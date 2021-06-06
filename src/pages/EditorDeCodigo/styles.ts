@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  h2,
-  input,
-  select {
-    margin-bottom: 1rem;
-  }
+  form {
+    h2,
+    input,
+    select {
+      margin-bottom: 1rem;
+    }
 
-  textarea {
-    margin-bottom: 2.5rem;
+    textarea {
+      margin-bottom: 2.5rem;
+    }
   }
 
   @media (min-width: 1200px) {
@@ -16,12 +18,14 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
 
-    h2,
-    input,
-    textarea,
-    select {
-      margin-left: 2.5rem;
-      width: calc(100% - 2.5rem);
+    form {
+      h2,
+      input,
+      textarea,
+      select {
+        margin-left: 2.5rem;
+        width: calc(100% - 2.5rem);
+      }
     }
   }
 `;

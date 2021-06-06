@@ -6,6 +6,7 @@ declare module 'styled-components' {
 
     colors: {
       white: string;
+      defaultCodeBgColor: string;
       blue100: string;
       blue200: string;
       blue300: string;

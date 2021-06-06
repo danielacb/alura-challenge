@@ -12,8 +12,11 @@ export const Input = styled.input(
     transition: 0.4s;
     width: 100%;
 
-    outline: 2px;
-    outline-color: transparent;
+    &,
+    &:focus {
+      outline: 2px;
+      outline-color: transparent;
+    }
 
     &::placeholder {
       color: ${theme.colors.white + '64'};
