@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  button {
+    margin-top: 2rem;
+  }
   form {
     h2,
     input,
@@ -10,6 +13,10 @@ export const Container = styled.div`
 
     textarea {
       margin-bottom: 2.5rem;
+    }
+
+    button {
+      margin-top: 1rem;
     }
   }
 
@@ -21,6 +28,7 @@ export const Container = styled.div`
     form {
       h2,
       input,
+      button,
       textarea,
       & > div {
         margin-left: 2.5rem;

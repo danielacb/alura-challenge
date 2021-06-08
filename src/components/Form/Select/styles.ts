@@ -22,10 +22,10 @@ export const Container = styled.div(
 
 export const Select = styled.select(
   ({ theme }) => css`
-    background-color: ${theme.colors.white + '16'};
+    background-color: ${theme.colors.white + '29'};
     border-radius: 0.5rem;
     border: none;
-    color: ${theme.colors.white + '64'};
+    color: ${theme.colors.white + 'A3'};
     height: 3.5rem;
     padding: 1rem 0.875rem;
     transition: 0.4s;
@@ -53,7 +53,7 @@ export const Select = styled.select(
     }
 
     &:hover {
-      background-color: ${theme.colors.white + '24'};
+      background-color: ${theme.colors.white + '3D'};
     }
   `
 );

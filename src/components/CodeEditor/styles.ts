@@ -50,10 +50,10 @@ export const CodeInput = styled.textarea(
     }
     ::-webkit-scrollbar-thumb {
       border-radius: 0.5rem;
-      background-color: ${theme.colors.white + '24'};
+      background-color: ${theme.colors.white + '3D'};
     }
     ::-webkit-scrollbar-thumb:hover {
-      background-color: ${theme.colors.white + '42'};
+      background-color: ${theme.colors.white + '6B'};
     }
   `
 );

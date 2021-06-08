@@ -2,10 +2,10 @@ import styled, { css } from 'styled-components';
 
 export const Input = styled.input(
   ({ theme }) => css`
-    background-color: ${theme.colors.white + '16'};
+    background-color: ${theme.colors.white + '29'};
     border-radius: 0.5rem;
     border: 0;
-    color: ${theme.colors.white + '64'};
+    color: ${theme.colors.white + 'A3'};
     font-size: 1rem;
     line-height: 1.5rem;
     padding: 1rem 0.875rem;
@@ -19,14 +19,14 @@ export const Input = styled.input(
     }
 
     &::placeholder {
-      color: ${theme.colors.white + '64'};
+      color: ${theme.colors.white + 'A3'};
       font-size: 1rem;
       line-height: 1.5rem;
     }
 
     &:hover,
     &:focus {
-      background-color: ${theme.colors.white + '24'};
+      background-color: ${theme.colors.white + '3D'};
     }
   `
 );

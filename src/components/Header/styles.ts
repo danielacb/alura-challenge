@@ -26,11 +26,11 @@ export const Search = styled.div(
       width: 3rem;
 
       &:hover {
-        background-color: ${theme.colors.blue300 + '08'};
+        background-color: ${theme.colors.blue300 + '14'};
       }
 
       &:focus {
-        background-color: ${theme.colors.blue300 + '16'};
+        background-color: ${theme.colors.blue300 + '29'};
       }
     }
 
@@ -78,11 +78,11 @@ export const SearchToggle = styled.button(
     }
 
     &:hover {
-      background-color: ${theme.colors.blue300 + '08'};
+      background-color: ${theme.colors.blue300 + '14'};
     }
 
     &:focus {
-      background-color: ${theme.colors.blue300 + '16'};
+      background-color: ${theme.colors.blue300 + '29'};
     }
 
     svg {
@@ -143,11 +143,11 @@ export const MenuToggle = styled.button(
     }
 
     &:hover {
-      background-color: ${theme.colors.blue300 + '08'};
+      background-color: ${theme.colors.blue300 + '14'};
     }
 
     &:focus {
-      background-color: ${theme.colors.blue300 + '16'};
+      background-color: ${theme.colors.blue300 + '29'};
     }
 
     @media (min-width: 1200px) {
@@ -183,7 +183,7 @@ export const Drawer = styled.nav(
     }
 
     &::before {
-      background-color: ${theme.colors.white + '16'};
+      background-color: ${theme.colors.white + '29'};
       content: '';
       height: 100%;
       left: 0;

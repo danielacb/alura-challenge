@@ -2,11 +2,11 @@ import styled, { css } from 'styled-components';
 
 export const Textarea = styled.textarea(
   ({ theme }) => css`
-    background-color: ${theme.colors.white + '16'};
+    background-color: ${theme.colors.white + '29'};
     border-radius: 0.5rem;
     border: none;
     resize: none;
-    color: ${theme.colors.white + '64'};
+    color: ${theme.colors.white + 'A3'};
     padding: 1rem 0.875rem;
     transition: 0.4s;
     width: 100%;
@@ -22,11 +22,11 @@ export const Textarea = styled.textarea(
     }
 
     &::placeholder {
-      color: ${theme.colors.white + '64'};
+      color: ${theme.colors.white + 'A3'};
     }
 
     &:hover {
-      background-color: ${theme.colors.white + '24'};
+      background-color: ${theme.colors.white + '3D'};
     }
   `
 );

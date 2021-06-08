@@ -14,7 +14,7 @@ export const Container = styled.div<AuthorProps>(
     transition: 0.4s;
 
     &:hover {
-      background-color: ${theme.colors.white + '08'};
+      background-color: ${theme.colors.white + '14'};
     }
   `
 );

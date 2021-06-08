@@ -7,6 +7,7 @@ import Menu from 'components/Menu';
 import Select from 'components/Form/Select';
 import CodeEditor from 'components/CodeEditor';
 import ColorPicker from 'components/Form/ColorPicker';
+import Button from 'components/Button';
 
 import * as S from './styles';
 
@@ -23,6 +24,7 @@ const EditorDeCodigo: React.FC = () => {
       </S.Column>
       <S.Content>
         <CodeEditor bgColor={bgCodeColor} />
+        <Button variant="secondary">Visualizar com o highlight</Button>
       </S.Content>
       <S.Column>
         <form>
@@ -32,6 +34,7 @@ const EditorDeCodigo: React.FC = () => {
           <h2>Personalização</h2>
           <Select name="projectLanguage" options={languages} placeholder="Select language" />
           <ColorPicker name="projectColor" color={bgCodeColor} setColor={setbgCodeColor} />
+          <Button variant="primary">Salvar projeto</Button>
         </form>
       </S.Column>
     </S.Container>

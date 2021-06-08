@@ -17,7 +17,7 @@ export const Icon = styled.span(
     justify-content: center;
     margin-right: 1rem;
 
-    background-color: ${theme.colors.blue300 + '16'};
+    background-color: ${theme.colors.blue300 + '29'};
   `
 );
 
@@ -28,17 +28,17 @@ export const MenuItem = styled.li(
     a {
       font-size: 16px;
       line-height: 24px;
-      color: ${theme.colors.white + '56'};
+      color: ${theme.colors.white + '8F'};
       text-decoration: none;
       display: flex;
       align-items: center;
       transition: 0.4s;
 
       &:hover {
-        color: ${theme.colors.white + '72'};
+        color: ${theme.colors.white + 'B8'};
 
         span {
-          background-color: ${theme.colors.blue300 + '64'};
+          background-color: ${theme.colors.blue300 + 'A3'};
         }
       }
 
