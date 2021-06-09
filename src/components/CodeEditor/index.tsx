@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
 
 type CodeEditorProps = {
@@ -20,30 +20,17 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ bgColor }) => {
     return go(f, seed, [])
   }`);
 
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  useLayoutEffect(() => {
-    if (textareaRef.current) {
-      textareaRef.current.style.height = 'inherit';
-      const scrollHeight = textareaRef.current.scrollHeight;
-      textareaRef.current.style.height = `${scrollHeight}px`;
-    }
-  }, [code]);
-
-  const updateValue = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (placeholder !== '') setPlaceholder('');
-    setCode(e.target.value);
-  };
-
   return (
     <S.Container color={bgColor}>
       <S.CodeInput
-        value={code}
-        name="codeEditor"
-        ref={textareaRef}
-        onChange={updateValue}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setCode(e.target.value)}
+        onClick={() => placeholder !== '' && setPlaceholder('')}
         placeholder={placeholder}
-      />
+        contentEditable="true"
+        suppressContentEditableWarning={true}
+      >
+        {placeholder !== '' ? placeholder : code}
+      </S.CodeInput>
       <S.DotsContainer>
         <S.Dots />
       </S.DotsContainer>

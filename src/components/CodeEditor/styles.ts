@@ -4,24 +4,26 @@ type StylesProps = {
   color?: string;
 };
 
-export const Container = styled.div<StylesProps>(
+export const Container = styled.pre<StylesProps>(
   ({ theme, color }) => css`
     background-color: ${color ? color : theme.colors.defaultCodeBgColor};
     border-radius: 0.5rem;
     padding: 2rem;
     position: relative;
+    white-space: break-spaces;
     width: 100%;
   `
 );
 
-export const CodeInput = styled.textarea(
+export const CodeInput = styled.code(
   ({ theme }) => css`
     background-color: ${theme.colors.darkGray};
     border-radius: 0.5rem;
     border: none;
     box-shadow: ${theme.shadow};
     color: ${theme.colors.white};
-    max-height: 18.875rem;
+    display: block;
+    min-height: 7.5rem;
     overflow: visible;
     padding: 3.25rem 1rem 1rem;
     resize: none;
