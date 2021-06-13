@@ -4,58 +4,35 @@ type StylesProps = {
   color?: string;
 };
 
-export const Container = styled.pre<StylesProps>(
+export const Container = styled.div<StylesProps>(
   ({ theme, color }) => css`
     background-color: ${color ? color : theme.colors.defaultCodeBgColor};
     border-radius: 0.5rem;
     padding: 2rem;
     position: relative;
-    white-space: break-spaces;
-    width: 100%;
-  `
-);
-
-export const CodeInput = styled.code(
-  ({ theme }) => css`
-    background-color: ${theme.colors.darkGray};
-    border-radius: 0.5rem;
-    border: none;
-    box-shadow: ${theme.shadow};
-    color: ${theme.colors.white};
-    display: block;
-    min-height: 7.5rem;
-    overflow: visible;
-    padding: 3.25rem 1rem 1rem;
-    resize: none;
     width: 100%;
 
-    &::placeholder {
-      color: ${theme.colors.white};
-    }
+    pre {
+      min-height: 7.5rem;
+      white-space: pre-wrap;
+      width: 100%;
 
-    &,
-    &:focus {
-      outline: 2px;
-      outline-color: transparent;
-    }
-
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-
-    ::-webkit-scrollbar {
-      width: 0.625rem;
-    }
-    ::-webkit-scrollbar-track {
+      &,
+      &:focus {
+        outline: 2px;
+        outline-color: transparent;
+      }
       background-color: ${theme.colors.darkGray};
       border-radius: 0.5rem;
-    }
-    ::-webkit-scrollbar-thumb {
-      border-radius: 0.5rem;
-      background-color: ${theme.colors.white + '3D'};
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: ${theme.colors.white + '6B'};
+      padding: 3.25rem 1rem 1rem;
+      box-shadow: ${theme.shadow};
+
+      code {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 0.875rem;
+        line-height: 1.125rem;
+        width: 100%;
+      }
     }
   `
 );

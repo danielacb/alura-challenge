@@ -5,12 +5,18 @@ type SelectProps = {
   id?: string;
   options: Array<string>;
   placeholder: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Select: React.FC<SelectProps> = ({ name, id, options, placeholder }) => {
+const Select: React.FC<SelectProps> = ({ name, id, options, placeholder, setValue }) => {
   return (
     <S.Container>
-      <S.Select name={name} id={id ? id : name} defaultValue="">
+      <S.Select
+        name={name}
+        id={id ? id : name}
+        defaultValue=""
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setValue(e.target.value)}
+      >
         <option value="" disabled>
           {placeholder}
         </option>
