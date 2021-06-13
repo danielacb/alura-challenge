@@ -18,18 +18,18 @@ const Header: React.FC = () => {
       </S.Column>
 
       <S.SearchToggle onClick={() => setSearchOpen(true)}>
-        <FaSearch size="1.5rem" />
+        <FaSearch size="24px" />
       </S.SearchToggle>
 
       <S.Search className={searchIsOpen ? 'open' : ''}>
         <SearchBar />
-        <FaTimes size="1.5rem" onClick={() => setSearchOpen(false)} />
+        <FaTimes size="24px" onClick={() => setSearchOpen(false)} />
       </S.Search>
 
       <S.Column>
         <Author />
         <S.MenuToggle onClick={() => setMenuIsOpen(!menuisOpen)}>
-          {menuisOpen ? <FaTimes size="1.5rem" /> : <FaBars size="1.5rem" />}
+          {menuisOpen ? <FaTimes size="24px" /> : <FaBars size="24px" />}
         </S.MenuToggle>
       </S.Column>
 

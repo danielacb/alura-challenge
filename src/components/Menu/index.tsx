@@ -9,7 +9,7 @@ const Menu: React.FC = () => {
       <S.MenuItem>
         <NavLink exact to="/" activeClassName="active">
           <S.Icon>
-            <FaCode size="1rem" />
+            <FaCode size="16px" />
           </S.Icon>
           Editor de Código
         </NavLink>
@@ -17,7 +17,7 @@ const Menu: React.FC = () => {
       <S.MenuItem>
         <NavLink to="/comunidade" activeClassName="active">
           <S.Icon>
-            <FaUsers size="1rem" />
+            <FaUsers size="16px" />
           </S.Icon>
           Comunidade
         </NavLink>

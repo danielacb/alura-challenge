@@ -26,7 +26,7 @@ const EditorDeCodigo: React.FC = () => {
       <S.Content>
         <CodeEditor bgColor={bgCodeColor} language={language} highlight={highlight} />
         <Button variant="secondary" onClick={() => setHighlight(!highlight)}>
-          {highlight ? 'Editar código' : 'Visualizar com o highlight'}
+          {highlight ? 'Visualizar sem o highlight' : 'Visualizar com o highlight'}
         </Button>
       </S.Content>
       <S.Column>

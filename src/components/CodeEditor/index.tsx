@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
-import codeEditorTheme from './theme';
+import highlightTheme from '../../styles/themes/highlightTheme';
 
 import * as S from './styles';
 
@@ -26,19 +26,46 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ bgColor, language, highlight })
     return go(f, seed, [])
   }`);
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const textarea = e.currentTarget;
+
+      setCode(
+        code.substring(0, textarea.selectionStart) + '\t' + code.substring(textarea.selectionEnd)
+      );
+      setTimeout(() => {
+        textarea.selectionStart = textarea.selectionEnd = textarea.selectionStart + 1;
+      }, 1);
+    }
+  };
+
   return (
     <S.Container color={bgColor}>
-      <SyntaxHighlighter
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setCode(e.target.value)}
-        onClick={() => placeholder !== '' && !highlight && setPlaceholder('')}
-        language={highlight ? language : 'text'}
-        style={codeEditorTheme}
-        contentEditable={highlight ? false : true}
-        suppressContentEditableWarning={true}
-        wrapLongLines
-      >
-        {placeholder !== '' ? placeholder : code}
-      </SyntaxHighlighter>
+      <S.CodeBlock>
+        <pre>
+          <S.CodeInput
+            value={code}
+            contentEditable={highlight ? false : true}
+            suppressContentEditableWarning={true}
+            spellCheck="false"
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setCode(e.target.value)}
+            onClick={() => placeholder !== '' && setPlaceholder('')}
+            onKeyDown={(e: React.KeyboardEvent<HTMLTextAreaElement>) => handleKeyDown(e)}
+          >
+            {code}
+          </S.CodeInput>
+        </pre>
+        <SyntaxHighlighter
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setCode(e.target.value)}
+          onClick={() => placeholder !== '' && setPlaceholder('')}
+          language={highlight && language ? language : 'text'}
+          style={highlightTheme}
+          wrapLongLines
+        >
+          {placeholder !== '' ? placeholder : code}
+        </SyntaxHighlighter>
+      </S.CodeBlock>
       <S.DotsContainer>
         <S.Dots />
       </S.DotsContainer>

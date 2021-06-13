@@ -12,27 +12,44 @@ export const Container = styled.div<StylesProps>(
     position: relative;
     width: 100%;
 
-    pre {
-      min-height: 7.5rem;
-      white-space: pre-wrap;
-      width: 100%;
+    code,
+    textarea {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      tab-size: 4;
+      -moz-tab-size: 4;
+    }
+  `
+);
 
-      &,
-      &:focus {
-        outline: 2px;
-        outline-color: transparent;
-      }
-      background-color: ${theme.colors.darkGray};
-      border-radius: 0.5rem;
-      padding: 3.25rem 1rem 1rem;
-      box-shadow: ${theme.shadow};
+export const CodeBlock = styled.div(
+  ({ theme }) => css`
+    background-color: ${theme.colors.darkGray};
+    border-radius: 0.5rem;
+    box-shadow: ${theme.shadow};
+    min-height: 7.5rem;
+    padding: 3.25rem 1rem 1rem;
+    position: relative;
+  `
+);
 
-      code {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 0.875rem;
-        line-height: 1.125rem;
-        width: 100%;
-      }
+export const CodeInput = styled.textarea(
+  ({ theme }) => css`
+    background: transparent;
+    border: none;
+    color: ${theme.colors.white};
+    display: block;
+    height: calc(100% - 3.25rem);
+    position: absolute;
+    resize: none;
+    width: calc(100% - 2rem);
+    -webkit-text-fill-color: transparent;
+
+    &,
+    &:focus {
+      outline: 2px;
+      outline-color: transparent;
     }
   `
 );

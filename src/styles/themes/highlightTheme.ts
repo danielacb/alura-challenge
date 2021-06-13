@@ -1,4 +1,4 @@
-const codeEditorTheme = {
+const highlightTheme = {
   'hljs-comment': {
     color: '#B6B18B',
   },
@@ -30,28 +30,28 @@ const codeEditorTheme = {
     color: '#EB3C54',
   },
   'hljs-number': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-built_in': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-builtin-name': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-literal': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-type': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-params': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-meta': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-link': {
-    color: '#E7CE56',
+    color: '#FFC46B',
   },
   'hljs-attribute': {
     color: '#EE7C2B',
@@ -69,20 +69,19 @@ const codeEditorTheme = {
     color: '#4FB4D7',
   },
   'hljs-title': {
-    color: '#78BB65',
+    color: '#9AFF6B',
   },
   'hljs-section': {
-    color: '#78BB65',
+    color: '#9AFF6B',
   },
   'hljs-keyword': {
-    color: '#B45EA4',
+    color: '#6B83FF',
   },
   'hljs-selector-tag': {
-    color: '#B45EA4',
+    color: '#6B83FF',
   },
   hljs: {
     display: 'block',
-    overflowX: 'auto',
   },
   code: {
     whiteSpace: 'break-spaces',
@@ -95,4 +94,4 @@ const codeEditorTheme = {
   },
 };
 
-export default codeEditorTheme;
+export default highlightTheme;
