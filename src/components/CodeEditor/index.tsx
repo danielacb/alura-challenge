@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
 import highlightTheme from '../../styles/themes/highlightTheme';
@@ -9,10 +9,11 @@ type CodeEditorProps = {
   bgColor?: string;
   language: string;
   highlight: boolean;
+  code: string;
+  setCode: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ bgColor, language, highlight }) => {
-  const [code, setCode] = useState('');
+const CodeEditor: React.FC<CodeEditorProps> = ({ bgColor, language, highlight, code, setCode }) => {
   const [placeholder, setPlaceholder] =
     useState(`const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
 

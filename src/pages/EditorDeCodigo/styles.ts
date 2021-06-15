@@ -59,3 +59,9 @@ export const Column = styled.aside`
     }
   }
 `;
+
+export const Message = styled.span`
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+`;
