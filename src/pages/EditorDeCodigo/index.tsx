@@ -13,10 +13,10 @@ import languages from 'utils/languages';
 import * as S from './styles';
 
 interface FormElements extends HTMLFormControlsCollection {
-  projectName: HTMLInputElement;
-  projectDescription: HTMLTextAreaElement;
-  projectLanguage: HTMLSelectElement;
-  projectColor: HTMLInputElement;
+  title: HTMLInputElement;
+  description: HTMLTextAreaElement;
+  language: HTMLSelectElement;
+  color: HTMLInputElement;
 }
 
 interface ProjectFormElements extends HTMLFormElement {
@@ -34,10 +34,10 @@ const EditorDeCodigo: React.FC = () => {
     e.preventDefault();
     const formElements = e.currentTarget.elements;
     console.log(
-      formElements.projectName.value,
-      formElements.projectDescription.value,
-      formElements.projectLanguage.value,
-      formElements.projectColor.value,
+      formElements.title.value,
+      formElements.description.value,
+      formElements.language.value,
+      formElements.color.value,
       code
     );
   };
@@ -63,16 +63,16 @@ const EditorDeCodigo: React.FC = () => {
       <S.Column>
         <form onSubmit={(e: React.FormEvent<ProjectFormElements>) => handleSubmit(e)}>
           <h2>Seu projeto</h2>
-          <InputText placeholder="Nome do seu projeto" name="projectName" />
-          <Textarea placeholder="Descrição do seu projeto" name="projectDescription" rows={3} />
+          <InputText placeholder="Nome do seu projeto" name="title" />
+          <Textarea placeholder="Descrição do seu projeto" name="description" rows={3} />
           <h2>Personalização</h2>
           <Select
-            name="projectLanguage"
+            name="language"
             options={languages}
-            placeholder="Select language"
+            placeholder="Selecione a linguagem"
             setValue={setLanguage}
           />
-          <ColorPicker name="projectColor" color={bgCodeColor} setColor={setbgCodeColor} />
+          <ColorPicker name="color" color={bgCodeColor} setColor={setbgCodeColor} />
           <Button variant="primary" type="submit">
             Salvar projeto
           </Button>

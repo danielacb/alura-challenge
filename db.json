@@ -1,0 +1,36 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Add a simple Django Route",
+      "description": "Let's edit sample/views.py as shown",
+      "language": "django",
+      "color": "#9aff6b",
+      "code": "return HttpResponse('Hello Django')"
+    },
+    {
+      "id": 2,
+      "title": "The Array.reduce Method",
+      "description": "The reduce method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.",
+      "language": "javascript",
+      "color": "#6b83ff",
+      "code": "const total = numeros.reduce((total, numero) => total + numero, 0);"
+    },
+    {
+      "id": 3,
+      "title": "The Array.forEach Method",
+      "description": "The forEach method executes a provided callback function once for every element in the array.",
+      "language": "javascript",
+      "color": "##ffc46b",
+      "code": "months.forEach(function(month) { console.log(month) });"
+    },
+    {
+      "id": 4,
+      "title": "The Array.map Method",
+      "description": "The map method executes a provided callback function once on every element in the array and it returns a new transformed array. that contains the results.",
+      "language": "javascript",
+      "color": "#ff6bcd",
+      "code": "const upperDays = workDays.map(function (day) { return day.toLocaleUpperCase() });"
+    }
+  ]
+}
