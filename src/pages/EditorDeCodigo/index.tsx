@@ -62,10 +62,10 @@ const EditorDeCodigo: React.FC = () => {
       </S.Content>
       <S.Column>
         <form onSubmit={(e: React.FormEvent<ProjectFormElements>) => handleSubmit(e)}>
-          <h2>Seu projeto</h2>
+          <h6>Seu projeto</h6>
           <InputText placeholder="Nome do seu projeto" name="title" />
           <Textarea placeholder="Descrição do seu projeto" name="description" rows={3} />
-          <h2>Personalização</h2>
+          <h6>Personalização</h6>
           <Select
             name="language"
             options={languages}

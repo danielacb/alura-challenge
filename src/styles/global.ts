@@ -32,11 +32,23 @@ button {
 }
 
 h2 {
+  font-size: 1.3125rem;
+  font-weight: bold;
+  line-height: 1.9375rem;
+}
+
+h6 {
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.4rem;
   line-height: 1.125rem;
   text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  opacity: 0.8;
 }
 
 @media (max-width: 1080px) {

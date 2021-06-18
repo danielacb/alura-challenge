@@ -5,7 +5,7 @@ export const Container = styled.div`
     margin-top: 2rem;
   }
   form {
-    h2,
+    h6,
     input,
     & > div {
       margin-bottom: 1rem;
@@ -26,7 +26,7 @@ export const Container = styled.div`
     justify-content: space-between;
 
     form {
-      h2,
+      h6,
       input,
       button,
       textarea,

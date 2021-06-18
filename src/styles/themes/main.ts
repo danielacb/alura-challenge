@@ -3,6 +3,7 @@ const main = {
 
   colors: {
     white: '#FFFFFF',
+    black: '#000000',
     defaultCodeBgColor: '#6BD1FF',
     blue100: '#96B9FD',
     blue200: '#7BA4FC',
