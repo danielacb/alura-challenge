@@ -21,7 +21,7 @@
       "title": "The Array.forEach Method",
       "description": "The forEach method executes a provided callback function once for every element in the array.",
       "language": "javascript",
-      "color": "##ffc46b",
+      "color": "#ffc46b",
       "code": "months.forEach(function(month) { console.log(month) });"
     },
     {

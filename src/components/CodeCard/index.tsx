@@ -3,20 +3,31 @@ import { FaComment, FaHeart } from 'react-icons/fa';
 
 import * as S from './styles';
 
-const CodeCard: React.FC = () => {
+type ProjectProps = {
+  id: number;
+  title: string;
+  description: string;
+  language: string;
+  color: string;
+  code: string;
+};
+
+type CodeCardProps = {
+  project: ProjectProps;
+};
+
+const CodeCard: React.FC<CodeCardProps> = ({ project }) => {
   return (
     <S.Container>
-      <S.CodeContainer>
-        <S.CodeBlock>
-          {`const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key])`}
-        </S.CodeBlock>
+      <S.CodeContainer color={project.color}>
+        <S.CodeBlock>{project.code}</S.CodeBlock>
         <S.DotsContainer>
           <S.Dots />
         </S.DotsContainer>
       </S.CodeContainer>
       <S.CardContent>
-        <h2>Título do projeto</h2>
-        <p>Essa é a descrição do meu projeto.</p>
+        <h2>{project.title}</h2>
+        <p>{project.description}</p>
         <S.CardActions>
           <span>
             <FaComment size="24px" /> 9

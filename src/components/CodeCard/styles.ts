@@ -1,19 +1,26 @@
 import styled, { css } from 'styled-components';
 
+type StylesProps = {
+  color: string;
+};
+
 export const Container = styled.div(
   ({ theme }) => css`
     background-color: ${theme.colors.black + '29'};
     border-radius: 8px;
     width: 100%;
+    margin-bottom: 1.5rem;
   `
 );
 
-export const CodeContainer = styled.pre`
-  background-color: lightskyblue;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  position: relative;
-`;
+export const CodeContainer = styled.pre<StylesProps>(
+  ({ color }) => css`
+    background-color: ${color};
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    position: relative;
+  `
+);
 
 export const CodeBlock = styled.code(
   ({ theme }) => css`
