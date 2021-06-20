@@ -1,3 +1,5 @@
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import highlightTheme from '../../styles/themes/highlightTheme';
 import Author from 'components/Author';
 import { FaComment, FaHeart } from 'react-icons/fa';
 
@@ -20,7 +22,9 @@ const CodeCard: React.FC<CodeCardProps> = ({ project }) => {
   return (
     <S.Container>
       <S.CodeContainer color={project.color}>
-        <S.CodeBlock>{project.code}</S.CodeBlock>
+        <SyntaxHighlighter style={highlightTheme} wrapLongLines language={project.language}>
+          {project.code}
+        </SyntaxHighlighter>
         <S.DotsContainer>
           <S.Dots />
         </S.DotsContainer>

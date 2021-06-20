@@ -14,30 +14,28 @@ export const Container = styled.div(
   `
 );
 
-export const CodeContainer = styled.pre<StylesProps>(
-  ({ color }) => css`
+export const CodeContainer = styled.div<StylesProps>(
+  ({ color, theme }) => css`
     background-color: ${color};
     border-radius: 0.5rem;
     padding: 1.5rem;
     position: relative;
-  `
-);
 
-export const CodeBlock = styled.code(
-  ({ theme }) => css`
-    background-color: ${theme.colors.darkGray};
-    border-radius: 0.5rem;
-    box-shadow: ${theme.shadow};
-    display: inline-block;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    min-height: 7.5rem;
-    padding: 3.25rem 1rem 1rem;
-    tab-size: 4;
-    white-space: pre-wrap;
-    width: 100%;
-    -moz-tab-size: 4;
+    pre {
+      background-color: ${theme.colors.darkGray};
+      border-radius: 0.5rem;
+      box-shadow: ${theme.shadow};
+      display: inline-block;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.875rem;
+      line-height: 1.125rem;
+      min-height: 7.5rem;
+      padding: 3.25rem 1rem 1rem;
+      tab-size: 4;
+      white-space: pre-wrap;
+      width: 100%;
+      -moz-tab-size: 4;
+    }
   `
 );
 
