@@ -28,6 +28,9 @@ export const Content = styled.section<StylesProps>(
 
     @media (min-width: 1200px) {
       max-width: ${`calc(100% - ${columnWidth}px)`};
+    }
+    @media (min-width: 960px) {
+      max-width: none;
       & > div {
         max-width: calc(50% - 0.75rem);
       }

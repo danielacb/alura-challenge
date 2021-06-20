@@ -10,6 +10,7 @@ export const Container = styled.div(
     border-radius: 8px;
     width: 100%;
     margin-bottom: 1.5rem;
+    position: relative;
   `
 );
 
@@ -41,7 +42,7 @@ export const CodeBlock = styled.code(
 );
 
 export const CardContent = styled.div`
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 6rem;
 
   h2 {
     margin-bottom: 0.5rem;
@@ -51,6 +52,9 @@ export const CardContent = styled.div`
 export const CardActions = styled.div`
   display: flex;
   margin-top: 1.5rem;
+  position: absolute;
+  bottom: 1.5rem;
+  width: calc(100% - 3rem);
 
   span {
     align-items: center;
