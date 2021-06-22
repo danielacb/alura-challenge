@@ -30,6 +30,7 @@ export const Container = styled.div`
       input,
       button,
       textarea,
+      span,
       & > div {
         margin-left: 2.5rem;
         width: calc(100% - 2.5rem);

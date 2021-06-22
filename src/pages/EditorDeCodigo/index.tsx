@@ -9,6 +9,7 @@ import CodeEditor from 'components/CodeEditor';
 import ColorPicker from 'components/Form/ColorPicker';
 import Button from 'components/Button';
 import languages from 'utils/languages';
+import { api } from 'services/api';
 
 import * as S from './styles';
 
@@ -29,17 +30,39 @@ const EditorDeCodigo: React.FC = () => {
   const [language, setLanguage] = useState('');
   const [highlight, setHighlight] = useState(false);
   const [code, setCode] = useState('');
+  const [errorMessage, setErrorMessage] = useState<null | string>(null);
 
   const handleSubmit = (e: React.FormEvent<ProjectFormElements>) => {
     e.preventDefault();
     const formElements = e.currentTarget.elements;
-    console.log(
-      formElements.title.value,
-      formElements.description.value,
-      formElements.language.value,
-      formElements.color.value,
-      code
-    );
+    const title = formElements.title.value;
+    const description = formElements.description.value;
+
+    const data = {
+      title,
+      description,
+      language,
+      color: bgCodeColor,
+      code,
+    };
+
+    const submitForm = () => {
+      api.post('projects', data);
+      setErrorMessage(null);
+      setbgCodeColor(themeContext.colors.defaultCodeBgColor);
+      setCode('');
+      e.currentTarget.reset();
+    };
+
+    title === ''
+      ? setErrorMessage('Nome do projeto é obrigatório!')
+      : description === ''
+      ? setErrorMessage('Descrição do projeto é obrigatória')
+      : language === ''
+      ? setErrorMessage('Selecione uma linguagem!')
+      : code === ''
+      ? setErrorMessage('Escreva seu código!')
+      : submitForm();
   };
 
   return (
@@ -76,6 +99,7 @@ const EditorDeCodigo: React.FC = () => {
           <Button variant="primary" type="submit">
             Salvar projeto
           </Button>
+          {errorMessage && <S.Message>{errorMessage}</S.Message>}
         </form>
       </S.Column>
     </S.Container>
