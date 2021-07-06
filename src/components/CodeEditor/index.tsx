@@ -64,7 +64,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ bgColor, language, highlight, c
           style={highlightTheme}
           wrapLongLines
         >
-          {placeholder !== '' ? placeholder : code}
+          {code === '' && placeholder !== '' ? placeholder : code}
         </SyntaxHighlighter>
       </S.CodeBlock>
       <S.DotsContainer>

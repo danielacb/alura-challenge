@@ -1,20 +1,23 @@
+import { SelectHTMLAttributes } from 'react';
 import * as S from './styles';
 
-type SelectProps = {
-  name: string;
-  id?: string;
+type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   options: Array<string>;
-  placeholder: string;
   setValue: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Select: React.FC<SelectProps> = ({ name, id, options, placeholder, setValue }) => {
+const Select: React.FC<SelectProps> = ({
+  options,
+  defaultValue,
+  placeholder,
+  setValue,
+  ...props
+}) => {
   return (
     <S.Container>
       <S.Select
-        name={name}
-        id={id ? id : name}
-        defaultValue=""
+        {...props}
+        value={defaultValue ? options[options.indexOf(String(defaultValue))] : ''}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setValue(e.target.value)}
       >
         <option value="" disabled>

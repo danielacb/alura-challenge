@@ -1,14 +1,10 @@
+import { TextareaHTMLAttributes } from 'react';
 import * as S from './styles';
 
-type TextareaProps = {
-  name: string;
-  id?: string;
-  placeholder: string;
-  rows?: number;
-};
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const Textarea: React.FC<TextareaProps> = ({ name, id, placeholder, rows }) => {
-  return <S.Textarea name={name} id={id ? id : name} placeholder={placeholder} rows={rows} />;
+const Textarea: React.FC<TextareaProps> = ({ ...props }) => {
+  return <S.Textarea {...props} />;
 };
 
 export default Textarea;

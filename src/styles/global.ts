@@ -51,6 +51,11 @@ p {
   opacity: 0.8;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 @media (max-width: 1080px) {
   html {
     font-size: 93.75%;

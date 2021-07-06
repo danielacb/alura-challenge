@@ -17,8 +17,11 @@ export const Content = styled.section<StylesProps>(
     flex-wrap: wrap;
     justify-content: space-between;
 
-    & > div {
+    & > a {
+      width: 100%;
       display: inline-block;
+
+      display: flex;
     }
 
     @media (min-width: 698px) and (max-width: 1199px) {
@@ -31,7 +34,7 @@ export const Content = styled.section<StylesProps>(
     }
     @media (min-width: 960px) {
       max-width: none;
-      & > div {
+      & > a {
         max-width: calc(50% - 0.75rem);
       }
     }

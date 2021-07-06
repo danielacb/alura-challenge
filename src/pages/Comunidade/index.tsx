@@ -1,4 +1,5 @@
 import { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { api } from 'services/api';
 import Menu from 'components/Menu';
@@ -49,7 +50,12 @@ const Comunidade: React.FC = () => {
         </S.Column>
         <S.Content columnWidth={columnWidth}>
           {projects.map((project: ProjectProps) => (
-            <CodeCard key={project.id} project={project} />
+            <Link
+              key={project.id}
+              to={`/comunidade/${project.id}/${project.title.toLowerCase().replace(/\s/g, '-')}`}
+            >
+              <CodeCard project={project} />
+            </Link>
           ))}
         </S.Content>
       </S.Container>
