@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+<img alt="Header Alura Challenge" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/alura-challenge-header.png" style="text-align: center;">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Primeira Edição Alura Challenges - Front-end
 
-## Available Scripts
+Desafio proposto pela Alura como inspirado no Challenge Based Learning que da Apple, onde foi proposto o desenvolvimento do projeto AluraDev com layout no Figma e requisitos em forma de cards no Trello.
+<br>
 
-In the project directory, you can run:
+## Projeto
 
-### `yarn start`
+Este projeto foi feito utilizando React, Typescript, Styled Components e json-server para criar uma api fake.
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Rodando o projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Rode a api fake
 
-### `yarn test`
+#### `yarn backend`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `yarn build`
+Depois rode o projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### `yarn start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Link úteis
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
+<a href="alura.com.br/challenges/front-end" target="_blank">
+  <img alt="Página do Desafio" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/btn-challenge.png" height="56px" >
+</a>
+<br>
+<a href="https://www.figma.com/file/Ve4hpTfmMa7yAFneoGtGKD/Projects?node-id=17%3A3367&viewport=86%2C-1148%2C0.3736729025840759" target="_blank">
+  <img alt="Layout no Figma" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/btn-figma.png" height="56px">
+</a>
+<br>
+<a href="https://trello.com/b/19ouy4RA/desafio-front-end-semana-1" target="_blank">
+  <img alt="Board do Trello (semana 1)" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/btn-trello-1.png" height="56px">
+</a>
+<br>
+<a href="https://trello.com/b/cx6kSI5C/desafio-front-end-semana-2" target="_blank">
+  <img alt="Board do Trello (semana 2)" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/btn-trello-2.png" height="56px">
+</a>
