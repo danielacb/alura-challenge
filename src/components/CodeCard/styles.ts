@@ -35,6 +35,24 @@ export const CodeContainer = styled.div<StylesProps>(
       white-space: pre-wrap;
       width: 100%;
       -moz-tab-size: 4;
+
+      max-height: 15rem;
+      overflow-y: scroll;
+
+      ::-webkit-scrollbar {
+        width: 0.625rem;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: ${theme.colors.darkGray};
+        border-radius: 0.5rem;
+      }
+      ::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: ${theme.colors.white + '24'};
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: ${theme.colors.white + '42'};
+      }
     }
   `
 );
@@ -77,7 +95,7 @@ export const DotsContainer = styled.div`
   border-top-left-radius: 0.5rem;
   height: 2.75rem;
   position: absolute;
-  top: 2rem;
+  top: 1.5rem;
   width: calc(100% - 5rem);
 `;
 
