@@ -36,7 +36,7 @@ interface ProjectFormElements extends HTMLFormElement {
   readonly elements: FormElements;
 }
 
-const EditorDeCodigo: React.FC<EditorDeCodigoProps> = ({ project }) => {
+const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
   const themeContext = useContext(ThemeContext);
   const { push } = useHistory();
   const [bgCodeColor, setbgCodeColor] = useState(themeContext.colors.defaultCodeBgColor);
@@ -77,17 +77,17 @@ const EditorDeCodigo: React.FC<EditorDeCodigoProps> = ({ project }) => {
       setbgCodeColor(themeContext.colors.defaultCodeBgColor);
       setCode('');
       e.currentTarget.reset();
-      project && push('/comunidade');
+      project && push('/community');
     };
 
     title === ''
-      ? setErrorMessage('Nome do projeto é obrigatório!')
+      ? setErrorMessage('Project name is required!')
       : description === ''
-      ? setErrorMessage('Descrição do projeto é obrigatória')
+      ? setErrorMessage('Project description is required!')
       : language === ''
-      ? setErrorMessage('Selecione uma linguagem!')
+      ? setErrorMessage('Select a language!')
       : code === ''
-      ? setErrorMessage('Escreva seu código!')
+      ? setErrorMessage('Write your code!')
       : submitForm();
   };
 
@@ -105,35 +105,35 @@ const EditorDeCodigo: React.FC<EditorDeCodigoProps> = ({ project }) => {
           setCode={setCode}
         />
         <Button variant="secondary" onClick={() => setHighlight(!highlight)}>
-          {highlight ? 'Visualizar sem o highlight' : 'Visualizar com o highlight'}
+          {`${highlight ? 'Without' : 'With'} highlight`}
         </Button>
-        {highlight && language === '' && <S.Message>Selecione uma linguagem!</S.Message>}
+        {highlight && language === '' && <S.Message>Select a language!</S.Message>}
       </S.Content>
       <S.Column>
         <form onSubmit={(e: React.FormEvent<ProjectFormElements>) => handleSubmit(e)}>
-          <h6>Seu projeto</h6>
+          <h6>Your project</h6>
           <InputText
-            placeholder="Nome do seu projeto"
+            placeholder="Project name"
             name="title"
             defaultValue={project ? project.title : ''}
           />
           <Textarea
-            placeholder="Descrição do seu projeto"
+            placeholder="Project description"
             name="description"
             rows={3}
             defaultValue={project ? project.description : undefined}
           />
-          <h6>Personalização</h6>
+          <h6>Customization</h6>
           <Select
             name="language"
             options={languages}
-            placeholder="Selecione a linguagem"
+            placeholder="Select language"
             setValue={setLanguage}
             defaultValue={project ? language : undefined}
           />
           <ColorPicker name="color" color={bgCodeColor} setColor={setbgCodeColor} />
           <Button variant="primary" type="submit">
-            Salvar projeto
+            Save project
           </Button>
           {errorMessage && <S.Message>{errorMessage}</S.Message>}
         </form>
@@ -142,4 +142,4 @@ const EditorDeCodigo: React.FC<EditorDeCodigoProps> = ({ project }) => {
   );
 };
 
-export default EditorDeCodigo;
+export default CodeEditorPage;

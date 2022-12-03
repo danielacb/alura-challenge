@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { api } from 'services/api';
 
-import EditorDeCodigo from 'pages/EditorDeCodigo';
+import EditorDeCodigo from 'pages/CodeEditor';
 import { useParams } from 'react-router-dom';
 
 type ProjectProps = {

@@ -11,15 +11,15 @@ const Menu: React.FC = () => {
           <S.Icon>
             <FaCode size="16px" />
           </S.Icon>
-          Editor de Código
+          Code Editor
         </NavLink>
       </S.MenuItem>
       <S.MenuItem>
-        <NavLink to="/comunidade" activeClassName="active">
+        <NavLink to="/community" activeClassName="active">
           <S.Icon>
             <FaUsers size="16px" />
           </S.Icon>
-          Comunidade
+          Community
         </NavLink>
       </S.MenuItem>
     </S.Container>

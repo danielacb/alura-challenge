@@ -16,7 +16,7 @@ type ProjectProps = {
   code: string;
 };
 
-const Comunidade: React.FC = () => {
+const Community: React.FC = () => {
   const [columnWidth, setColumnWidth] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [projects, setProjects] = useState<ProjectProps[]>([]);
@@ -31,6 +31,8 @@ const Comunidade: React.FC = () => {
     const { data } = await api.get('projects');
     setProjects(data);
   };
+
+  console.log(projects);
 
   useEffect(() => {
     getProjects();
@@ -52,7 +54,7 @@ const Comunidade: React.FC = () => {
           {projects.map((project: ProjectProps) => (
             <Link
               key={project.id}
-              to={`/comunidade/${project.id}/${project.title.toLowerCase().replace(/\s/g, '-')}`}
+              to={`/community/${project.id}/${project.title.toLowerCase().replace(/\s/g, '-')}`}
             >
               <CodeCard project={project} />
             </Link>
@@ -63,4 +65,4 @@ const Comunidade: React.FC = () => {
   );
 };
 
-export default Comunidade;
+export default Community;
