@@ -4,15 +4,7 @@ import Author from 'components/Author';
 import { FaComment, FaHeart } from 'react-icons/fa';
 
 import * as S from './styles';
-
-type ProjectProps = {
-  id: number;
-  title: string;
-  description: string;
-  language: string;
-  color: string;
-  code: string;
-};
+import { ProjectProps } from 'pages/Community';
 
 type CodeCardProps = {
   project: ProjectProps;
@@ -21,7 +13,7 @@ type CodeCardProps = {
 const CodeCard: React.FC<CodeCardProps> = ({ project }) => {
   return (
     <S.Container>
-      <S.CodeContainer color={project.color}>
+      <S.CodeContainer color={project.color.hex}>
         <SyntaxHighlighter style={highlightTheme} wrapLongLines language={project.language}>
           {project.code}
         </SyntaxHighlighter>

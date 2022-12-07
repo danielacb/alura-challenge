@@ -1,25 +1,26 @@
-import { useState, useRef, useLayoutEffect, useEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
 
-import { api } from 'services/api';
 import Menu from 'components/Menu';
 import CodeCard from 'components/CodeCard';
 
 import * as S from './styles';
 
-type ProjectProps = {
+export type ProjectProps = {
   id: number;
   title: string;
   description: string;
   language: string;
-  color: string;
+  color: {
+    hex: string;
+  };
   code: string;
 };
 
 const Community: React.FC = () => {
   const [columnWidth, setColumnWidth] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [projects, setProjects] = useState<ProjectProps[]>([]);
   const columnRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -27,16 +28,22 @@ const Community: React.FC = () => {
     if (columnRef.current) setColumnWidth(columnRef.current.offsetWidth);
   }, [windowWidth]);
 
-  const getProjects = async () => {
-    const { data } = await api.get('projects');
-    setProjects(data);
-  };
+  const { data } = useQuery(gql`
+    query Projects {
+      projects {
+        id
+        title
+        description
+        color {
+          hex
+        }
+        language
+        code
+      }
+    }
+  `);
 
-  console.log(projects);
-
-  useEffect(() => {
-    getProjects();
-  }, []);
+  const projects = (data?.projects as ProjectProps[]) || [];
 
   return (
     <>
