@@ -4,19 +4,9 @@ import { Link } from 'react-router-dom';
 
 import Menu from 'components/Menu';
 import CodeCard from 'components/CodeCard';
+import { ProjectProps } from 'types';
 
 import * as S from './styles';
-
-export type ProjectProps = {
-  id: string | number;
-  title: string;
-  description: string;
-  language: string;
-  code: string;
-  color: {
-    hex: string;
-  };
-};
 
 const Community: React.FC = () => {
   const [columnWidth, setColumnWidth] = useState(0);

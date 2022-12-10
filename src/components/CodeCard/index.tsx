@@ -4,7 +4,7 @@ import Author from 'components/Author';
 import { FaComment, FaHeart } from 'react-icons/fa';
 
 import * as S from './styles';
-import { ProjectProps } from 'pages/Community';
+import { ProjectProps } from 'types';
 
 type CodeCardProps = {
   project: ProjectProps;

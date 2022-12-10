@@ -13,7 +13,7 @@ import Button from 'components/Button';
 import languages from 'utils/languages';
 
 import * as S from './styles';
-import { ProjectProps } from 'pages/Community';
+import { ProjectProps } from 'types';
 
 type EditorDeCodigoProps = {
   project?: ProjectProps;
