@@ -10,6 +10,7 @@ const Select: React.FC<SelectProps> = ({
   options,
   defaultValue,
   placeholder,
+  value,
   setValue,
   ...props
 }) => {
@@ -17,7 +18,7 @@ const Select: React.FC<SelectProps> = ({
     <S.Container>
       <S.Select
         {...props}
-        value={defaultValue ? options[options.indexOf(String(defaultValue))] : ''}
+        value={defaultValue ? options[options.indexOf(String(defaultValue))] : value}
         onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setValue(e.target.value)}
       >
         <option value="" disabled>
