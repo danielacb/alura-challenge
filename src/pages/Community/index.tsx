@@ -8,14 +8,14 @@ import CodeCard from 'components/CodeCard';
 import * as S from './styles';
 
 export type ProjectProps = {
-  id: number;
+  id: string | number;
   title: string;
   description: string;
   language: string;
+  code: string;
   color: {
     hex: string;
   };
-  code: string;
 };
 
 const Community: React.FC = () => {

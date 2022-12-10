@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { ApolloError, gql, useMutation } from '@apollo/client';
 
 import InputText from 'components/Form/InputText';
 import Textarea from 'components/Form/Textarea';
@@ -10,19 +11,12 @@ import CodeEditor from 'components/CodeEditor';
 import ColorPicker from 'components/Form/ColorPicker';
 import Button from 'components/Button';
 import languages from 'utils/languages';
-import { api } from 'services/api';
 
 import * as S from './styles';
+import { ProjectProps } from 'pages/Community';
 
 type EditorDeCodigoProps = {
-  project?: {
-    id: number;
-    title: string;
-    description: string;
-    language: string;
-    color: string;
-    code: string;
-  };
+  project?: ProjectProps;
 };
 
 interface FormElements extends HTMLFormControlsCollection {
@@ -40,18 +34,49 @@ const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
   const themeContext = useContext(ThemeContext);
   const { push } = useHistory();
   const [bgCodeColor, setbgCodeColor] = useState(themeContext.colors.defaultCodeBgColor);
+  const [code, setCode] = useState('');
   const [language, setLanguage] = useState('');
   const [highlight, setHighlight] = useState(false);
-  const [code, setCode] = useState('');
-  const [errorMessage, setErrorMessage] = useState<null | string>(null);
+  const [errorMessage, setErrorMessage] = useState<null | string | ApolloError>(null);
 
   useEffect(() => {
     if (project) {
       setLanguage(project.language);
       setCode(project.code);
-      setbgCodeColor(project.color);
+      setbgCodeColor(project.color.hex);
     }
   }, [project]);
+
+  const [createProject, { error: createProjectError }] = useMutation(gql`
+    mutation CreateProject($data: ProjectCreateInput!) {
+      createProject(data: $data) {
+        id
+      }
+    }
+  `);
+
+  const [publishProject, { error: publishProjectError }] = useMutation(gql`
+    mutation PublishProject($where: ProjectWhereUniqueInput!) {
+      publishProject(where: $where) {
+        id
+      }
+    }
+  `);
+
+  const [updateProject, { error: updateProjectError }] = useMutation(gql`
+    mutation UpdateProject($where: ProjectWhereUniqueInput!, $data: ProjectUpdateInput!) {
+      updateProject(where: $where, data: $data) {
+        id
+        title
+        description
+        code
+        language
+        color {
+          hex
+        }
+      }
+    }
+  `);
 
   const handleSubmit = (e: React.FormEvent<ProjectFormElements>) => {
     e.preventDefault();
@@ -59,25 +84,36 @@ const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
     const title = formElements.title.value;
     const description = formElements.description.value;
 
-    const data = {
+    const formData = {
       title,
       description,
       language,
-      color: bgCodeColor,
+      color: {
+        hex: bgCodeColor,
+      },
       code,
     };
 
-    const submitForm = () => {
+    const submitForm = async () => {
       if (project) {
-        api.put(`projects/${project.id}`, data);
+        updateProject({ variables: { where: { id: project.id }, data: formData } })
+          .then(() => updateProjectError && setErrorMessage(updateProjectError))
+          .finally(() => push('/community'));
       } else {
-        api.post('projects', data);
+        createProject({ variables: { data: formData } })
+          .then(({ data }) => {
+            data
+              ? publishProject({ variables: { where: { id: data.createProject.id } } })
+              : createProjectError && setErrorMessage(createProjectError);
+          })
+          .then(() => publishProjectError && setErrorMessage(publishProjectError));
       }
+
       setErrorMessage(null);
       setbgCodeColor(themeContext.colors.defaultCodeBgColor);
       setCode('');
       e.currentTarget.reset();
-      project && push('/community');
+      setLanguage('');
     };
 
     title === ''
@@ -130,6 +166,7 @@ const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
             placeholder="Select language"
             setValue={setLanguage}
             defaultValue={project ? language : undefined}
+            value={language}
           />
           <ColorPicker name="color" color={bgCodeColor} setColor={setbgCodeColor} />
           <Button variant="primary" type="submit">
