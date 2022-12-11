@@ -1,5 +1,5 @@
-import { useState, useContext, useEffect } from 'react';
-import { ThemeContext } from 'styled-components';
+import { useState, useEffect } from 'react';
+import { useTheme } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { ApolloError, gql, useMutation } from '@apollo/client';
 
@@ -31,9 +31,9 @@ interface ProjectFormElements extends HTMLFormElement {
 }
 
 const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
-  const themeContext = useContext(ThemeContext);
+  const theme = useTheme();
   const { push } = useHistory();
-  const [bgCodeColor, setbgCodeColor] = useState(themeContext.colors.defaultCodeBgColor);
+  const [bgCodeColor, setbgCodeColor] = useState(theme.colors.defaultCodeBgColor);
   const [code, setCode] = useState('');
   const [language, setLanguage] = useState('');
   const [highlight, setHighlight] = useState(false);
@@ -110,7 +110,7 @@ const CodeEditorPage: React.FC<EditorDeCodigoProps> = ({ project }) => {
       }
 
       setErrorMessage(null);
-      setbgCodeColor(themeContext.colors.defaultCodeBgColor);
+      setbgCodeColor(theme.colors.defaultCodeBgColor);
       setCode('');
       e.currentTarget.reset();
       setLanguage('');
