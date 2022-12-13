@@ -6,15 +6,17 @@ Challenge proposed by Alura was inspired by Apple's Challenge Based Learning, wh
 
 <br>
 
-Made with React, Typescript, Styled Components and json-server.
+Made with React, Typescript, Styled Components and using GraphQl with [Hygraph](https://hygraph.com/).
 
 <br>
 
 ## Running the project locally
 
-Run the fake api
+Rename the `.env.example` to `.env` adding you Hygraph Token and API url, see How to generate it [here](https://hygraph.com/docs/api-reference/basics/authorization#api-endpoints).
 
-#### `yarn backend`
+Install the dependencies
+
+#### `yarn install`
 
 <br>
 
@@ -29,6 +31,7 @@ Then run the project
 <br>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0ea473f4-5874-40a0-816d-cdaf36ac168e/deploy-status)](https://app.netlify.com/sites/dcb-alura-dev/deploys)
+<br>
 <br>
 <a href="https://dcb-alura-dev.netlify.app/" target="_blank">
 <img alt="Ver Projeto Online" src="https://raw.githubusercontent.com/danielacb/challenge_alura-dev/main/public/readme/btn-project.png" height="60px" >
